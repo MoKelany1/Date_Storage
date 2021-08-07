@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --grad-from: hsl(6, 100%, 80%);
+    --grad-to: hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --gryash-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --v-dark-blue: hsl(229, 57%, 11%);
+    --raleway-font: 'Raleway', sans-serif;
+}
+body {
+    font-family: var(--raleway-font);
+    background-image: url(../images/bg-desktop.png);
+    background-size: cover;
+    height: 100vh;
+}
+.container {
+    width: 900px;
+    margin: 207px auto;
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 991px) {
+    body {
+        background-image: url(../images/bg-mobile.png);
+        background-size: cover;
+    }
+    .container {
+        flex-direction: column;
+        width: 350px;
+        margin: 148px auto;
+    }
+    .container .usage {
+        max-width: 350px;
+        padding-bottom: 50px;
+    }
+    .container .usage p {
+        margin-right: -20px;
+        margin-bottom: 20px !important;
+    }
+}
+.container > div {
+    background-color: var(--dark-blue);
+    padding: 40px 53px 30px 40px;
+}
+.container .folyo {
+    flex-basis: 40%;
+    border-radius: 10px;
+    border-top-right-radius: 100px;
+    max-width: 360px;
+}
+.container .folyo .logo {
+    margin-bottom: 30px;
+}
+.container .folyo .icons  {
+    display: flex;
+    align-items: center;
+}
+.container .folyo .icons > div {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--v-dark-blue);
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+}
+.container .folyo .icons img {
+    cursor: pointer;
+}
+.container .usage {
+    flex-basis: 57%;
+    margin-top: 50px;
+    border-radius: 10px;
+    max-width: 513px;
+}
+.container .usage p {
+    color: var(--pale-blue);
+    margin-bottom: 10px;
+}
+.container .usage p span {
+    font-weight: bold;
+}
+.container .usage .count {
+    background-color: var(--v-dark-blue);
+    width: 100%;
+    height: 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+.container .usage .count span {
+    background-image: linear-gradient(var(--grad-from),var(--grad-to));
+    height: 100%;
+    display: block;
+    height: 84%;
+    border-radius: 15px;
+    position: relative;
+}
+.container .usage .count span::after {
+    position: absolute;
+    content: '';
+    left: 96%;
+    top: -5%;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: white;
+}
+.container .usage .limit {
+    display: flex;
+    justify-content: space-between;
+    color: var(--pale-blue);
+}
